@@ -115,7 +115,10 @@ describe('features - subprocess-navigation', function() {
       canvas.setActivePlane('rootProcess');
 
       // Then
-      expect(canvas.viewbox()).to.eql(zoomedAndScrolledViewbox);
+      var newViewbox = canvas.viewbox();
+      expect(newViewbox.x).to.eql(zoomedAndScrolledViewbox.x);
+      expect(newViewbox.y).to.eql(zoomedAndScrolledViewbox.y);
+      expect(newViewbox.scale).to.eql(zoomedAndScrolledViewbox.scale);
     }));
 
   });
